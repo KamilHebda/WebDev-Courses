@@ -27,7 +27,7 @@ function aiChoice() {
 function chceckResult(player, ai) {
   if (player === ai) {
     return 'draw';
-  } else if ((player === 'papier' && ai === 'kamień') || (player === 'kamień' && ai === 'nożyczki') || (player === 'nożyczki' && ai === 'papier')) {
+  } else if ((player === 'paper' && ai === 'rock') || (player === 'rock' && ai === 'scissors') || (player === 'scissors' && ai === 'paper')) {
     return 'win';
   } else {
     return 'lose';
