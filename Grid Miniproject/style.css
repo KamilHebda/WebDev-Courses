@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas:
+    'logotype search menu'
+    'gallery gallery gallery'
+    'contact contact contact'
+    'footer footer footer';
+
+  /* kontener */
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.logo {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+  grid-area: logotype;
+  background-color: rgb(114, 171, 140);
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.search {
+  /* grid-column: 2/3;
+  grid-row: 1/2; */
+  grid-area: search;
+  background-color: rgb(187, 137, 57);
+  line-height: 100px;
+  text-align: center;
+}
+
+.menu {
+  grid-column: -1/-2;
+  grid-row: 1/2;
+  background-color: rgb(158, 129, 206);
+  line-height: 100px;
+  text-align: center;
+}
+
+.gallery {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  background-color: rgb(221, 227, 231);
+
+  /* kontener */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(405px, 1fr));
+  gap: 15px;
+  padding: 120px 15px 15px;
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+.gallery h1 {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contact {
+  grid-area: 3/1/4/-1;
+  height: 50px;
+  background-color: rgb(89, 88, 103);
+  text-align: center;
+  line-height: 50px;
+}
+
+.footer {
+  grid-area: footer;
+  height: 100px;
+  background-color: rgb(171, 140, 162);
+  text-align: center;
+  line-height: 100px;
+}
