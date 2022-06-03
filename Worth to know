@@ -1,0 +1,201 @@
+//Losowa liczba z przedziału
+
+// const min = 1;
+// const max = 99;
+
+// const result = Math.floor(Math.random() * (max-min+1) + min);
+// console.log(result);
+
+//Zmiana liter w stringu 2 metoda replace
+
+// const txt = "Marcin lubi prążki"
+// const repTxt = txt.replace("Marcin","Kuba");
+// console.log(repTxt);
+
+//Dodawanie elementu do tablicy metody push() i pop();
+
+// const tab = [1, 2, 3]; 
+// tab.push(4); 
+// console.log(tab);
+// console.log(Array.isArray(tab));
+// tab.pop(); 
+// console.log(tab);
+
+// Dodawanie i usuwanie elementu na początku tablicy metody unshift() i shift();
+
+// const tab = [1, 2, 3, 4];
+// tab.unshift(0);
+// console.log(tab);
+// tab.shift();
+// console.log(tab);
+
+//Łączenie elementów tablicy separatorem metoda join(separator);
+// const tab = [1, 2, 3, 4].join(" "); 
+// console.log(tab);
+
+//Zamiana stringa w tablicę 
+
+// const str = "Kononowicz to ziomek";
+// console.log([...str]);
+// console.log(str.split(" "));
+
+//Wyszukiwanie elementu tablicy
+
+// const tab = [1, 2, 3, 4];
+// // console.log(tab.indexOf(4));
+// // console.log(tab.lastIndexOf(1));
+// console.log(tab.includes(5));
+
+//sortowanie liczb 
+
+// const tab = [2, 3, 7, 8, 1, 5, 9, 2];
+// function compareNr(a, b) {
+//   return a - b;
+// }
+
+// console.log(tab.sort(compareNr));
+
+//sortowanie stringów 
+
+// const tab = ["Mariusz", "aga", "Lucek", "arek"]
+// tab.sort(function (a,b) {
+//   return a.localeCompare( b);
+// });
+//  console.log(tab);
+
+//łączeie tablic 
+
+// const anim1 = ["pies", "kot", "mysza"]; 
+// const anim2 = ["koń", "kogut", "kawka"];
+
+// // console.log(anim1.concat(anim2));
+// console.log(...anim1, ...anim2);
+
+//metoda slice(start, stop)
+
+// const tab =  ["pies", "kot", "mysza", "koń", "kogut", "kawka"]
+// const newTab = tab.slice(3,4); 
+// console.log(newTab);
+
+//metoda splice(index, ile usunąć, nowy element)
+
+// const tab =  ["pies", "kot", "mysza", "koń", "kogut", "kawka"];
+// const newTab = tab.splice(3,3);
+// console.log(tab);
+
+//pętle for of
+
+// const tab =  ["pies", "kot", "mysza", "koń", "kogut", "kawka"];
+// for (const el of tab){
+//   console.log(el.toUpperCase()); 
+// }
+
+//Funkcja do zmiany nazwy
+
+// const fixName = (name) => {
+//   return name.charAt(0).toUpperCase() + name.slice(1);
+// };
+
+// const result = `${fixName('andrzej') fixName('kowalski')``;
+// console.log(result);
+
+
+//Pobieranie DOM
+
+// const switcher = document.querySelector('.switch').addEventListener('click', () => {
+//   document.body.classList.toggle('color');
+// });
+
+// zmiana styli css DOM
+
+// document.body.style.backgroundColor = "green";
+
+//funkcja sprawdzająca zawartość tablicy w tablicy
+// const arr = [[1], [2], [3], [4]];
+
+// const isNumberInArrayOfArrays = (number, array) => {
+//   array.forEach(innerArray => {
+//     innerArray.includes(number)? console.log(true) : console.log(false);
+//     // innerArray.indexOf(number) !== -1 ? console.log(true) : console.log(false); 
+//   })
+// };
+
+// isNumberInArrayOfArrays(3, arr); 
+
+// funkcja konwersji celciusów na farentheidy
+// const farentheit = (celcius) => {
+//   return (celcius * 9/5) + 32;
+// }
+
+// console.log(farentheit(32));
+
+//funkcja reverse string
+// function reverseString(str) {
+//   let reversedStr= '';
+//   for (let i = str.length - 1; i >= 0; i--){
+//     reversedStr += str[i];
+//   }
+//   return reversedStr;
+// }
+
+// console.log(reverseString("Dorotka"));
+
+// easier way
+
+// const txt = "Dorotka"
+// console.log(txt.split("").reverse().join(""));
+
+//silnia
+// function factorialize(num) {
+//   if (num === 0) {
+//     return 1;
+//   }
+//   return num * factorialize(num - 1);
+// }
+// console.log(factorialize(6));
+
+//forEach vs map
+
+// const numbers = [0, 1, 2, 3, 4];
+
+// const newNumbers = numbers.forEach(number => {console.log(number * 3)})
+// console.log(newNumbers); //undefinied - nic nie zwraca - do wykonywania kodu bez zwracania
+
+// const mapNumbers = numbers.map(number => number * 3)
+// console.log(mapNumbers); //dostajemy tablicę undefinied, bo chcemy zrobić w console.logu console.loga
+
+// zadanie z tablicami od MMC tablice
+
+// const numbers = [1, 5, 13, 26, 48]
+
+// const newArr = numbers.map(number => number * 5);
+// console.log(newArr);
+
+// for(const num of newArr){
+//   (num % 2 === 0)? console.log(`liczba przysta ${num}`) : console.log(`liczba nieparzysta ${num}`);
+// };
+
+//zadanie z kolorami MMC tablice
+// const color = ["czarny"];
+
+// color.push('zielony');
+// color.unshift('niebieski');
+
+// for(const col of color){
+//   console.log(`Mój ulubiony kolor to: ${col.charAt(0).toUpperCase() + col.slice(1)}`);
+// }
+
+// zadanie MMC tablice
+
+// const str = "Audi, Mercedes, BMW, Nissan, Dodge";
+// const newStr = str.split(",");
+// console.log(newStr);
+
+// (newStr.length > 3)? console.log("Jest Ok") : console.log("Nie jest Ok");
+
+// (newStr.includes("Audi"))? newStr.push("Audi") : newStr.pop("Audi");
+ 
+//  console.log(newStr);
+
+
+
