@@ -90,6 +90,18 @@
 //   console.log(el.toUpperCase()); 
 // }
 
+//Callback
+
+// const names = ['Andrzej', 'Michał', 'Aga', 'Mirka'];
+
+// const showBigNames = (name) => {
+//   console.log(name.toUpperCase());
+// }
+
+// names.forEach(showBigNames);
+
+// names.forEach(name => console.log(name.toUpperCase()));
+
 //Funkcja do zmiany nazwy
 
 // const fixName = (name) => {
@@ -196,6 +208,63 @@
 // (newStr.includes("Audi"))? newStr.push("Audi") : newStr.pop("Audi");
  
 //  console.log(newStr);
+
+// Zadanie MMC z funkcjami
+
+
+// let score
+
+// const add = (num1, num2) => {
+//   const score = num1 + num2;
+  
+//   score % 2 === 0  ? even(score) : odd(score);
+// }
+
+// const even = (num) => {
+//   console.log(`liczba ${num} jest parzysta`);
+// }
+
+// const odd = (num) => {
+//   console.log(`liczba ${num} jest nieparzysta`);
+// }
+
+// add(2,3);
+
+//zadanie MMC konwenter temperatury 
+
+// let celsius
+// let temp
+
+// const fahrentheit = (c) => {
+//   celsius = c;
+//   temp = celsius * 1.8 + 32;
+  
+//   console.log(`${c}oC = ${temp}oF`);
+// };
+
+// fahrentheit(32);
+
+//zadanie MMC pętla z forEach
+
+// const num = 10;
+// const numbers = [];
+
+// for (let i = 0; i < num; i++) {
+//   numbers.push(i);
+// }
+
+// const checkNumber = numbers.forEach(el => {
+//   el % 3 === 0 && el != 0 ? console.log(`${el} jest podzielne przez 3`) : console.log(`${el} nie jest podzielne przez 3 lub x = 0`);
+// });
+
+
+
+
+
+  
+
+
+
 
 
 
