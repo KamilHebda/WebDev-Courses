@@ -114,6 +114,28 @@
 
 //Pobieranie DOM
 
+// //getelementById
+// const test = document.getElementById('item');
+
+// //getElementsByTagName
+
+// const test2 = document.getElementsByTagName('ul');
+
+// //getElementByClassName
+
+// const test3 = document.getElementByClassName('test');
+
+// //querySelector
+
+// const test = document.querySelector('li');
+// const liItem = ulList.querySelector('li');
+
+// //querySelectorAll
+
+// const test = document.querySelectorAll('li');
+
+// query selektory nie wspomagają żywych kolekcji - elementów dodawanych do DOM z poziomu JSa
+
 // const switcher = document.querySelector('.switch').addEventListener('click', () => {
 //   document.body.classList.toggle('color');
 // });
@@ -256,6 +278,19 @@
 // const checkNumber = numbers.forEach(el => {
 //   el % 3 === 0 && el != 0 ? console.log(`${el} jest podzielne przez 3`) : console.log(`${el} nie jest podzielne przez 3 lub x = 0`);
 // });
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
 
 
