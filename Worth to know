@@ -111,7 +111,6 @@
 // const result = `${fixName('andrzej') fixName('kowalski')``;
 // console.log(result);
 
-
 //Pobieranie DOM
 
 // //getelementById
@@ -135,6 +134,58 @@
 // const test = document.querySelectorAll('li');
 
 // query selektory nie wspomagają żywych kolekcji - elementów dodawanych do DOM z poziomu JSa
+
+//tworzenie elementu
+
+// const ulList = document.createElement('ul');
+// const liItem = document.createElement('li');
+// liItem.textContent = 'cześć';
+// document.body.appendChild(ulList);
+// ulList.appendChild(liItem);
+
+// tworzenie elementu ćwiczenie
+
+// const div = document.querySelector('div');
+// const pItem = document.createElement('p');
+
+// div.appendChild(pItem);
+// console.log(pItem);
+
+//Append - można dodawać wiele elementów po przecinku
+
+// const div = document.querySelector('div');
+// const pItem = document.createElement('p');
+// const headingTwo = document.createElement('h2');
+
+// div.append(pItem, headingTwo)
+
+//outerHTML, innerHTML, innerText, textContent
+
+// const btn = document.querySelector('button');
+
+// console.log(btn.outerHTML);
+// btn.outerHTML = '123' //usuwa przycisk i wstawia tekst
+
+// btn.innerHTML = ''; //pracujemy tylko z tekstem
+// btn.innerHTML = '<li>123</li>'; //możemy nawet dodać tagi html, nie powinniśmy stosować gdy użytkownik może modyfikować tekst na stronie, ponieważ innetHTML zaczytuje również style
+
+// console.log(btn.innerText); //działają tak samo - dodają tekst na stronę 
+// console.log(btn.textContent); //textContent ignoruje style dodane w html
+
+//usuwanie elementów ze strony
+
+// const div = document.querySelector('div');
+// const p = document.querySelector('p');
+
+//removeChild
+
+// div.removeChild(p);
+// document.body.removeChild(div);
+
+//remove
+
+// p.remove();
+// div.remove();
 
 // const switcher = document.querySelector('.switch').addEventListener('click', () => {
 //   document.body.classList.toggle('color');
@@ -278,19 +329,6 @@
 // const checkNumber = numbers.forEach(el => {
 //   el % 3 === 0 && el != 0 ? console.log(`${el} jest podzielne przez 3`) : console.log(`${el} nie jest podzielne przez 3 lub x = 0`);
 // });
-
-
-
-
-
-  
-
-
-
-
-
-
-
 
 
 
