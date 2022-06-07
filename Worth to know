@@ -29,7 +29,7 @@
 // tab.shift();
 // console.log(tab);
 
-//Łączenie elementów tablicy separatorem metoda join(separator);
+// Łączenie elementów tablicy separatorem metoda join(separator);
 // const tab = [1, 2, 3, 4].join(" "); 
 // console.log(tab);
 
@@ -104,11 +104,11 @@
 
 //Funkcja do zmiany nazwy
 
-// const fixName = (name) => {
+// const fixName = name => {
 //   return name.charAt(0).toUpperCase() + name.slice(1);
-// };
+// }
 
-// const result = `${fixName('andrzej') fixName('kowalski')``;
+// const result = `${fixName('andrzej')} ${fixName('kowalski')}`;
 // console.log(result);
 
 //Pobieranie DOM
@@ -187,13 +187,97 @@
 // p.remove();
 // div.remove();
 
+// target.addEventListener(type, listener) - ogólny wzór
+
+// const btn1 = document.querySelector('.btn1')
+
+// btn1.addEventListener('click', () => 
+//   console.log('klik');
+// );
+
+// btn1.addEventListener('mouseover', () => 
+//   console.log('najechano na mnie');
+// );
+
+// const test = () => console.log('double click');
+
+// btn1.addEventListener('dblclick', test);
+
+// const btns = document.querySelectorAll('btn')
+// btns.forEach(btn => btn.addEventListener('click', test));
+
+//event
+
+// const btn = document.querySelector('button');
+
+// const test = (e) => console.log(e); //pokazuje eventy, gdzie klikneliśmy np.
+// const test = (e) => console.log(e.target); //możemy odnosić się do elementu, który klikamy
+// const test = (e) => console.log(e.target.classList); //wypisuje wszystkie klasy jakie mamy na przycisku
+// const test = (e) => console.log(e.target.offsetTop); //pokazuje odległość od góry strony
+
+// btn.addEventListener('click', test);
+
+// bubbling i capturing 
+
+// gold.addEventListener('click', infogold, {capture: true}); //zmiana fazy bubbling na capturing
+
+//stop propagation - wkonuje się tylko ta funkcja, którą klikneliśmy bez fazy bubbling wyżej
+
+// const infoGold = (e) => {
+//   e.stopPropagation()
+//   console.log("Wykonuje jakiś kod") /
+// } 
+
+// delegacja zdarzeń
+
+// lime.addEventListener('click', e => {
+//   if(e.target.matches('.circle2')){ //jak matchuje daną klase to dopiero się wyświetli console.log
+//     console.log(test);
+//   }
+// })
+
+// lime.addEventListener('click', e => { //pobieramy rodzica i nadajemy listenera
+//   if(e.target.classList.contains('.circle2')){ //jak matchuje daną klase to dopiero się wyświetli console.log
+//     console.log(test);
+//   }
+// })
+
+// zmiana styli css DOM - nie powinniśmy krozystać na stronie
+
+// document.body.style.backgroundColor = "green";
+
+// const div = document.querySelector('div');
+
+// div.style.fontSize = "20px";
+// div.style.padding = " 20px 40px";
+// div.style.borderRadius = '8px';
+
+// dodawanie, usuwanie, toggle klas
+
+// const addBtn = document.querySelector('button');
+// const txt = document.querySelector('p');
+
+// const addClass = () => {
+//   text.classList.add('test')
+// }
+
+// addBtn.addEventListener('click', addClass);
+
+// const removeClass = () => {
+//   text.classList.remove('test')
+// }
+
+// addBtn.addEventListener('click', removeClass);
+
+// const toggleClass = () => {
+//   text.classList.toggle('test')
+// }
+
+// addBtn.addEventListener('click', toggleClass);
+
 // const switcher = document.querySelector('.switch').addEventListener('click', () => {
 //   document.body.classList.toggle('color');
 // });
-
-// zmiana styli css DOM
-
-// document.body.style.backgroundColor = "green";
 
 //funkcja sprawdzająca zawartość tablicy w tablicy
 // const arr = [[1], [2], [3], [4]];
@@ -209,12 +293,13 @@
 
 // funkcja konwersji celciusów na farentheidy
 // const farentheit = (celcius) => {
-//   return (celcius * 9/5) + 32;
+//   return celcius * 1.8 + 32;
 // }
 
 // console.log(farentheit(32));
 
 //funkcja reverse string
+
 // function reverseString(str) {
 //   let reversedStr= '';
 //   for (let i = str.length - 1; i >= 0; i--){
