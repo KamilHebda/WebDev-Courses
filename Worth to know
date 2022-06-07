@@ -415,14 +415,49 @@
 //   el % 3 === 0 && el != 0 ? console.log(`${el} jest podzielne przez 3`) : console.log(`${el} nie jest podzielne przez 3 lub x = 0`);
 // });
 
+//Zadanie MMC manipulacja DOM
 
+// const ulList = document.createElement('ul');
+// document.body.append(ulList);
+// const number = 10;
 
+// for (let i = 1; i <= number; i++) {
+//   const liItem = document.createElement('li');
+//   liItem.textContent = i;
+//   ulList.append(liItem);
+// }
 
+// const lastLi = ulList.querySelector('li:last-child');
+// lastLi.style.backgroundColor = 'blue';
+// lastLi.style.padding = '20px 40px';
+// lastLi.style.fontSize = '48px';
 
-  
+//zadania MMC manipulacja DOM 2
 
+// const btn1 = document.querySelector('.btn1');
+// const btn2 = document.querySelector('.btn2');
+// const p1 = document.querySelector('.p1');
+// const p2 = document.querySelector('.p2');
+// const divSq = document.querySelector('.square');
 
+// const hi = () => {
+//   console.log('hi');
+// }
 
+// const red = () => {
+//   divSq.style.backgroundColor = "red";
+// }
 
+// const blue = () => {
+//   divSq.style.backgroundColor = "blue";
+// }
 
+// const toggle = () => {
+//   p1.classList.toggle('show');
+//   p2.classList.toggle('show');
+// }
 
+// btn1.addEventListener('dblclick', hi);
+// divSq.addEventListener('mouseover', red);
+// divSq.addEventListener('mouseleave', blue);
+// btn2.addEventListener('click', toggle);
