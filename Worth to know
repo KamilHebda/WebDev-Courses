@@ -1,11 +1,3 @@
-//Losowa liczba z przedziału
-
-// const min = 1;
-// const max = 99;
-
-// const result = Math.floor(Math.random() * (max-min+1) + min);
-// console.log(result);
-
 //Zmiana liter w stringu 2 metoda replace
 
 // const txt = "Marcin lubi prążki"
@@ -83,6 +75,16 @@
 // const newTab = tab.splice(3,3);
 // console.log(tab);
 
+//forEach vs map
+
+// const numbers = [0, 1, 2, 3, 4];
+
+// const newNumbers = numbers.forEach(number => {console.log(number * 3)})
+// console.log(newNumbers); //undefinied - nic nie zwraca - do wykonywania kodu bez zwracania
+
+// const mapNumbers = numbers.map(number => number * 3)
+// console.log(mapNumbers); //dostajemy tablicę undefinied, bo chcemy zrobić w console.logu console.loga
+
 //pętle for of
 
 // const tab =  ["pies", "kot", "mysza", "koń", "kogut", "kawka"];
@@ -90,7 +92,7 @@
 //   console.log(el.toUpperCase()); 
 // }
 
-//Callback
+//Callback funkcja w funkcji
 
 // const names = ['Andrzej', 'Michał', 'Aga', 'Mirka'];
 
@@ -242,7 +244,7 @@
 //   }
 // })
 
-// zmiana styli css DOM - nie powinniśmy krozystać na stronie
+// zmiana styli css DOM - nie powinniśmy korzystać na stronie
 
 // document.body.style.backgroundColor = "green";
 
@@ -275,9 +277,93 @@
 
 // addBtn.addEventListener('click', toggleClass);
 
+// zmiana koloru tła
+
 // const switcher = document.querySelector('.switch').addEventListener('click', () => {
 //   document.body.classList.toggle('color');
 // });
+
+//setTimeout i setInterval
+
+// const test = () => {
+//   console.log("hi");
+// }
+
+// setInterval(test, 4000); // opóźnienie wykonania jakiejś funkcji
+// setInterval(test, 2000); //zapętlone wykonywanie funkcji po czasie
+
+//strict mode - zabezpieczenie w JS 
+// 'use strict'
+
+// const colors = ['red', 'green', 'blue'];
+
+// for (let color of colors){ //musimy dodać let na początku
+//   console.log(color);
+// }
+
+//alert, confirm & prompt
+
+// alert('cześć');
+
+// if(confirm('chcesz pizze?')){
+//   console.log('ok');
+// }else{
+//   console.log('nie to nie');
+// }; 
+
+// const name = prompt('Cześć, jak masz na imię?', "Ania");
+// console.log(`Cześć ${name}`); //rzadko się używa
+
+//obiekt Math
+
+// console.log(Math.PI);
+
+// console.log(Math.max(5,10))
+// console.log(Math.min(5,10))
+
+//console.log(Math.random()) //generuje liczby od 0 do 1
+//Math.floor() //sprowadza liczbę do liczby całkowitej bez wartości po przecinku (ucina)
+
+//Losowa liczba z przedziału
+
+// const min = 1;
+// const max = 99;
+
+// const result = Math.floor(Math.random() * (max-min+1) + min);
+// console.log(result);
+
+//Atrybuty w JS
+
+// const link = document.querySelector('a');
+// const img = document.querySelector('img');
+// const p = document.queryselector('p');
+
+// link.setAttribute('href', '#'); //dodaje i ustawia nowy atrybut i przypisuje do niego wartość w DOMie
+// console.log(img.getAttribute('src')); //pobiera wartość, która jest przypisana do danego atrybutu
+// console.log(p.hasAttribute('style')); //sprawdza, czy tag ma jakiś atrybut 
+// p.removeAtribute('style'); // usuwa atrybut w DOMie
+
+//data atrybuty - dodajemy własne data atrybuty w html np. div data-number = '123' data-more-info='to jest tekst'></div>
+
+// const div.document.querySelector('[data-number='23']'); //pobieranie customowych atrybutów w []
+// console.log(divTag.dataset.number); //zwraca obiekt
+// console.log(divTag.dataset.moreInfo);
+
+//relacje rodzinne
+
+// const grandpa = document.querySelector('.grandparent');
+// const parent = grandpa.querySekector('.parent');
+// const child = parent.querySelectorAll('.child');
+
+//const middleChild = document.querySelector('.middle-child') //ma 2 braci 1 wcześniej 1 później
+// const prevSibling = middleChild.previousElementSibling;
+// const nextSibling = middleChild.nextElementSibling;
+
+// const parentEl = middleChild.parentElement;
+// const grandpaEl = middleChild.closest('.grandparent');
+
+
+
 
 //funkcja sprawdzająca zawartość tablicy w tablicy
 // const arr = [[1], [2], [3], [4]];
@@ -324,16 +410,6 @@
 // }
 // console.log(factorialize(6));
 
-//forEach vs map
-
-// const numbers = [0, 1, 2, 3, 4];
-
-// const newNumbers = numbers.forEach(number => {console.log(number * 3)})
-// console.log(newNumbers); //undefinied - nic nie zwraca - do wykonywania kodu bez zwracania
-
-// const mapNumbers = numbers.map(number => number * 3)
-// console.log(mapNumbers); //dostajemy tablicę undefinied, bo chcemy zrobić w console.logu console.loga
-
 // zadanie z tablicami od MMC tablice
 
 // const numbers = [1, 5, 13, 26, 48]
@@ -368,7 +444,6 @@
 //  console.log(newStr);
 
 // Zadanie MMC z funkcjami
-
 
 // let score
 
