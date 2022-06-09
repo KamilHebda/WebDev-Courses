@@ -345,6 +345,8 @@
 
 //data atrybuty - dodajemy własne data atrybuty w html np. div data-number = '123' data-more-info='to jest tekst'></div>
 
+// div.dataset.id // przykład
+
 // const div.document.querySelector('[data-number='23']'); //pobieranie customowych atrybutów w []
 // console.log(divTag.dataset.number); //zwraca obiekt
 // console.log(divTag.dataset.moreInfo);
@@ -362,8 +364,12 @@
 // const parentEl = middleChild.parentElement;
 // const grandpaEl = middleChild.closest('.grandparent');
 
+//Konsola
 
-
+// console.log(window.console)
+// console.warn('warning');
+// console.error('error');
+// console.table(['123', 123]);
 
 //funkcja sprawdzająca zawartość tablicy w tablicy
 // const arr = [[1], [2], [3], [4]];
@@ -536,3 +542,29 @@
 // divSq.addEventListener('mouseover', red);
 // divSq.addEventListener('mouseleave', blue);
 // btn2.addEventListener('click', toggle);
+
+//zadanie MMC manipulacja DOM
+
+// const imgElement = document.createElement('img');
+// document.body.append(imgElement);
+// imgElement.setAttribute('src', 'https://cdn.pixabay.com/photo/2022/03/08/07/08/water-7055153_960_720.jpg');
+// img.Element.setAttribute('alt','obrazek');
+
+// const myFunc = () => {
+//   console.log('cokolwiek');
+// }
+
+// setTimeout(myFunc, 2000);
+
+// zadanie MMC manipulacja DOM
+// const liItems = document.querySelectorAll('li');
+// let number = 1;
+
+// for(liItem of liItems){
+//   liItem.textContent = number;
+//   liItem.dataset.id = number;
+//   number++
+// }
+
+// const thirdLi = document.querySelector([data-id="3"])
+// console.log(thirdLi.closest('.wrapper'));
