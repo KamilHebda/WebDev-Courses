@@ -668,4 +668,65 @@
 
 // newUser.hello()
 
-Zadanie MMC
+// Zadanie MMC
+
+// const btn1 = document.querySelector('.btn1');
+// const btn2 = document.querySelector('.btn2');
+// const btn3 = document.querySelector('.btn3');
+// const p = document.querySelector('p');
+
+// function Food(name, price) {
+//   this.name = name
+//   this.price = price
+// }
+
+// const schabowy = new Food ('Schabowy', 23)
+// const carbonara = new Food ('Carbonara', 19)
+// const żur = new Food ('Żurek', 15)
+
+// Food.prototype.show = function() {
+//   console.log(`${this.name} kosztuje ${this.price} zł.`);
+// }
+
+// btn1.addEventListener('click', () => console.log(this)); - this jest obiektem window
+// btn1.addEventListener('click', function(){console.log(this)}); - this jest naszym buttonem
+
+// btn1.addEventListener('click', () => schabowy.show()); - sposób na rozwiązanie problemu z thisem
+// btn2.addEventListener('click', () => carbonara.show());
+// btn3.addEventListener('click', () => żur.show());
+
+// THIS 2
+
+// console.log(this); - w zakresie globalnym obiektem window
+
+// function test () {
+//   console.log(this);
+// }
+
+// test() - obiekt window, z use strictem undefined
+
+//this w zwykłej funkcji będzie wskazywał na obiekt, który jest na lewo od kropki
+// const person = {
+//   name: 'Kajek',
+//   'fav-meal': 'sznycel',
+//   address: {
+//     city: 'Kraków',
+//     'zip-code': '30-741',
+//     showCity(){
+//       console.log(this.city);
+//     }
+//   }
+// }
+
+// person.address.showCity();
+
+// this w konstruktorze wskazuje na obiekt, stworzony na podstawie konstruktora
+
+// function Food(name){
+//   this.name = name
+// }
+
+// const meal = new Food('schabowy')
+// const meal2 = new Food('pepsy')
+
+// console.log(meal, meal2);
