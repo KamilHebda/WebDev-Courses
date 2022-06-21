@@ -61,7 +61,7 @@
 // const anim2 = ["koń", "kogut", "kawka"];
 
 // // console.log(anim1.concat(anim2));
-// console.log(...anim1, ...anim2);
+// console.log([...anim1, ...anim2]);
 
 //metoda slice(start, stop)
 
@@ -260,7 +260,7 @@
 // const txt = document.querySelector('p');
 
 // const addClass = () => {
-//   text.classList.add('test')
+//   txt.classList.add('test')
 // }
 
 // addBtn.addEventListener('click', addClass);
@@ -354,7 +354,7 @@
 //relacje rodzinne
 
 // const grandpa = document.querySelector('.grandparent');
-// const parent = grandpa.querySekector('.parent');
+// const parent = grandpa.querySelector('.parent');
 // const child = parent.querySelectorAll('.child');
 
 //const middleChild = document.querySelector('.middle-child') //ma 2 braci 1 wcześniej 1 później
@@ -568,3 +568,104 @@
 
 // const thirdLi = document.querySelector([data-id="3"])
 // console.log(thirdLi.closest('.wrapper'));
+
+// Obiekty - w JS pierwotnie nie było OOP
+
+// const myObiect = {
+//   key: value,
+//   key: value,
+//   key: value
+// }
+
+// Dodawanie nowych rzeczy do obektu
+
+// const user = {
+//   name: "Dorota",
+//   age: 31,
+//   // 'fav-color': 'czerwony' - warto zapamiętać
+// }
+
+// user.country = 'Polska'
+// // user.fav-color //taki zapis jest niepoprawny
+// user['fav-color'] = 'niebieski'
+
+// console.log(user)
+
+// const dogName = 'Drops'
+// const dogAge = 5
+
+// const dog = {
+//   // name: dogName,
+//   // age: dogAge
+  
+//   dogName,
+//   dogAge
+// }
+
+// console.log(dog);
+
+// Pętla for in
+
+// const user = {
+//   name: 'Andrzej',
+//   age: 23,
+//   sex: 'male',
+//   'hair-color': 'black'
+// }
+// for(const data in user){
+//   console.log(data + ":" + user[data]); //dostajemy sie do wartości przypisanych w kluczach
+// }
+
+// THIS
+
+// const user = {
+//   name: 'Kamil',
+//   display(){
+//     console.log(this.name); //this targetuje nasz obiekt, zwraca obiekt, w którym się znajdujemy
+//   }
+// }
+
+// user.display();
+
+// Konstruktor - funkcja do tworzenia obiektów, zapisujemy z dużej litery
+
+// function User(name, age){
+//   this.name = name
+//   this.age = age
+  
+//   this.hello = function(){
+//     console.log(`Cześć ${this.name}`)
+//   }
+// }
+
+// const newUser = new User('Andrzej', 34)
+// const newUser2 = new User('Maria', 33)
+// console.log(newUser);
+// console.log(newUser2);
+
+// newUser2.hello();
+ 
+//Prototyp 
+
+//  function User(name, age){
+//   this.name = name
+//   this.age = age
+  
+// }
+
+// const newUser = new User('Andrzej', 34)
+// const newUser2 = new User('Maria', 33)
+// const newUser3 = new User('Kiram', 23);
+
+// console.log(newUser, newUser2, newUser3);
+
+// User.prototype.hello = function(){
+//     console.log(`Cześć ${this.name}`)
+//   }
+// User.prototype.country = 'Polska'
+
+// //przenosimy metodę hello z obiektu i dodajemy do prorotypu, aby nie była wywoływana przy każdym obiekcie
+
+// newUser.hello()
+
+Zadanie MMC
