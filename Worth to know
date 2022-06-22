@@ -557,6 +557,7 @@
 // setTimeout(myFunc, 2000);
 
 // zadanie MMC manipulacja DOM
+
 // const liItems = document.querySelectorAll('li');
 // let number = 1;
 
@@ -730,3 +731,247 @@
 // const meal2 = new Food('pepsy')
 
 // console.log(meal, meal2);
+
+// THIS 3
+
+// this w listenerach
+
+// const btns = document.querySelectorAll('button');
+
+// btns.forEach(btn => btn.addEventListener('click', function (){
+//   console.log(this); //this wskazuje na element, który kliknelismy, jeśli damy this.textContent to this wskazuje na liczby w buttonie
+// }))
+
+// btns.forEach(btn => btn.addEventListener('click', function (e){
+//   console.log(e.target); //this wskazuje na ten sam element co this z przykładu wyżej
+// }))
+
+// this w funkcji strzałkowej
+
+// btns.forEach(btn => btn.addEventListener('click', () => {
+//   console.log(this); //this jest undefied - ponieważ jest obiektem window
+// }))
+
+// btns.forEach(btn => btn.addEventListener('click', (e) => {
+//   console.log(e.target); //this wskazuje na element, który klikneliśmy
+// }))
+
+// const ob = {
+//   number: 123,
+//   showNumber() {
+//     console.log(this.number); //cl pokaże 123
+//   },
+//   // showNumber2:() => {
+//   //   console.log(this); //wskazuje obiekt window
+  
+//   showNumber2() {
+//     const test = () => {
+//       console.log(this.number); //sposób na thisa w funkcji strzałkowej
+//     }
+//     test();
+//   }
+// }
+
+// ob.showNumber();
+// ob.showNumber2();
+
+// Bind wiąże thisa z obiektami
+
+// function test() {
+//   console.log(this);
+//   console.log(this.name);
+// }
+
+// const car1 = {
+//   name: 'Audi',
+// }
+
+// const car2 = {
+//   name: 'Dodge',
+// }
+
+// const car3 = {
+//   name: 'Nissan',
+// }
+
+// test.bind(car1)();//do metody bind jako argument podajemy obiekt, który chcemy wywołać i wywiłujemy jeszcze raz całą funkcję
+// test.bind(car2)();
+// test.bind(car3)();
+
+// Call i Apply 
+
+// const movie = {
+//   title: 'Avengers',
+// }
+
+// function showMovie(price, cinema) {
+//   console.log(`Film ${this.title}, cena: ${price}, kino: ${cinema}.`)//this wskazuje window
+// }
+
+// showMovie(23, Helios);
+
+// showMovie.call(movie, 35, 'Kinokox');//podajemy nazwę obiektu, o który nam chodzi i argumenty
+// showMovie.apply(movie, [35, 'Kinokox']); podajemy argumenty w tablicy
+
+// Klasy
+
+// Stary zapis
+
+// function Person(name, age){  
+//   this.name = name
+//   this.age = age
+// }
+
+// Person.prototype.sayHi = function () {
+//   console.log(`Cześć, jestem ${this.name}`)
+// }
+
+// Person.prototype.showAge = function () {
+//   console.log(`Mam ${this.age} lat.`)
+// }
+
+// const person1 = new Person('Ela', 26);
+// console.log(person1);
+// person1.sayHi();
+// person1.showAge();
+
+// nowy zapis
+
+// class Person2 {
+//   constructor (name, age){  
+//     this.name = name
+//     this.age = age
+//   }
+  
+//   sayHi(){
+//     console.log(`Cześć, jestem ${this.name}`)
+//   }
+//   showAge(){
+//     console.log(`Mam ${this.age} lat/a.`)
+//   }
+// }
+
+// const person2 = new Person2 ('Kasia', 34);
+// person2.sayHi();
+// person2.showAge();
+
+// Extends i Super
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name
+//   }
+  
+//   sound() {
+//     console.log(`Zwierzak robi 'hau hau'.`)
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, age) {
+//     super(name)//musimy odwołać się słowem super do argumentu w konstruktorze klasy z której dziedziczymy
+//     this.age = age
+//   }
+// }
+
+// class Cat extends Animal{
+//   constructor(name){
+//     super (name)
+//   }
+//   sound(){
+//     console.log('miał')
+//   }
+// }
+
+//   const dog = new Dog('Drops', 6)
+//   const cat = new Cat('Andrzej')
+//   console.log(cat);
+//   cat.sound();
+
+// Obiect.Assign - łączenie obiektów 
+
+// const user = {
+//   name: "Lily",
+//   age: 23
+// }
+
+// const pet = {
+//   name: "Figa",
+//   type: 'dog'
+// }
+
+
+// const userInfo = Object.assign(user, pet);// Object.assign to co jest po prawej stronie przypisuje do lewej
+// console.log(userInfo); //jeden kluczy name został nadpisany
+// console.log(user); //został zniszczony
+
+// const userInfo2 = Object.assign({}, user, pet); //wstawiamy {} przed naszymi obektami, zęby ich nie zniszczyć 
+
+// const userCopy = Object.assign({}, user)
+// userCopy.age =25;
+// console.log(userCopy);
+
+// Destrukturyzacja obiektów
+
+// const person = {
+//   name: 'Andrzej',
+//   age: '43',
+//   job: 'kelner',
+//   car: {
+//     brand: 'Dodge',
+//     model: 'Viper'
+//   }
+// }
+
+// const showInfo = () => {
+  
+//   const {name, age, job} = person
+//   const {name:firstName, age, job} = person //podmieniamy argument
+  
+//   // const name = person.name
+//   // const age = person.age
+//   // const job = person.job
+  
+//   console.log(`${name} ma ${age} lat i jest ${job}em`)
+  
+//   // console.log(`${person.name} ma ${person.age} lat i jest ${person.job}em`)
+// }
+
+// showInfo()
+
+// const showInfo = ({name, age, job}) => { //skrócony zapis tego co powyżej
+  
+//   console.log(`${name} ma ${age} lat i jest ${job}em`)
+// }
+
+// showInfo(person);
+
+// const showInfo2 = ({car: {brand, model}}) => { //jak dostać się do obiektu w obiekcie
+//   console.log(`Jej samochód to ${brand} ${model}`);
+// }
+
+// showInfo2(person);
+
+// const showInfo3 = () => { //jak dostać się do obiektu w obiekcie
+  
+//   const {car: {brand, model}} = person
+  
+//   console.log(`Jej samochód to ${brand} ${model}`);
+// }
+
+// showInfo3();
+
+// Destrukturyzacja tablic - bardziej jako ciekawostka
+
+// const colors = ['czerwony', 'niebieski', 'zielony'];
+
+// const firstColor = colors[0];
+// const secondColor = colors[1];
+
+// const [first, second] = colors
+
+// console.log(firstColor, secondColor);
+// console.log(first, second);
+
+// const[,,abcd] = colors
+// console.log(colors)
