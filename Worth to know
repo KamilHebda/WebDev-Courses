@@ -749,7 +749,7 @@
 // this w funkcji strzałkowej
 
 // btns.forEach(btn => btn.addEventListener('click', () => {
-//   console.log(this); //this jest undefied - ponieważ jest obiektem window
+//   console.log(this); //this jest undefined - ponieważ jest obiektem window
 // }))
 
 // btns.forEach(btn => btn.addEventListener('click', (e) => {
@@ -798,7 +798,7 @@
 // test.bind(car2)();
 // test.bind(car3)();
 
-// Call i Apply 
+// Call i Apply - wiąże obiekt z funkcją
 
 // const movie = {
 //   title: 'Avengers',
@@ -975,3 +975,27 @@
 
 // const[,,abcd] = colors
 // console.log(colors)
+
+// JSON AJAX API
+
+// https://github.com/public-apis/public-apis
+
+const btn = document.querySelector('button');
+const img = document.querySelector('img');
+
+const URL = 'https://github.com/public-apis/public-apis' //pobieramy API ze strony z API (zapisujemy dużymi literami)
+// const API_KEY = '123ksdako32432' //zapisujemy klucz do API
+
+// fetch().then().catch() - standardowy zapis fetcha. fetch słuzy do poboru danych, then mówi co zrobimy sobie z tymi danymi, catch wyłapuje błędy 
+
+// fetch(URL)
+//   .then(res => console.log(res)) //response
+//   .then(data => console.log(data.message)) //przechodzimy do data i dostajemy link do zdj
+//   .catch(err => console.error(err)) //wyrzuca błąd
+
+// btn.addEventListener('click', ()=> {
+//   fetch(URL)
+//   .then(res => res.json()) //response w jsonie
+//   .then(data => setAttribute('src', data.message)) //ustawiamy atrybut do img
+//   .catch(err => console.error(err)) //wyrzuca błąd
+// } )
