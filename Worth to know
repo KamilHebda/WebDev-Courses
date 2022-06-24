@@ -665,7 +665,7 @@
 //   }
 // User.prototype.country = 'Polska'
 
-// //przenosimy metodę hello z obiektu i dodajemy do prorotypu, aby nie była wywoływana przy każdym obiekcie
+// //przenosimy metodę hello z obiektu i dodajemy do prototypu, aby nie była wywoływana przy każdym obiekcie
 
 // newUser.hello()
 
@@ -980,10 +980,10 @@
 
 // https://github.com/public-apis/public-apis
 
-const btn = document.querySelector('button');
-const img = document.querySelector('img');
+// const btn = document.querySelector('button');
+// const img = document.querySelector('img');
 
-const URL = 'https://github.com/public-apis/public-apis' //pobieramy API ze strony z API (zapisujemy dużymi literami)
+// const URL = 'https://dog.ceo/api/breeds/image/random' //pobieramy API ze strony z API (zapisujemy dużymi literami)
 // const API_KEY = '123ksdako32432' //zapisujemy klucz do API
 
 // fetch().then().catch() - standardowy zapis fetcha. fetch słuzy do poboru danych, then mówi co zrobimy sobie z tymi danymi, catch wyłapuje błędy 
@@ -996,6 +996,226 @@ const URL = 'https://github.com/public-apis/public-apis' //pobieramy API ze stro
 // btn.addEventListener('click', ()=> {
 //   fetch(URL)
 //   .then(res => res.json()) //response w jsonie
-//   .then(data => setAttribute('src', data.message)) //ustawiamy atrybut do img
+//   .then(data => img.setAttribute('src', data.message)) //ustawiamy atrybut do img
 //   .catch(err => console.error(err)) //wyrzuca błąd
 // } )
+
+// Statusy
+
+// http.cat - strona zawierająca kody błędów
+
+// 400 - jakiś błąd np. 404 not found 403 Acces Denied
+
+// AJAX - asynchroniczny JS i XML (przechowuje dane), możemy wysylać i odbierać dane bez konieczności przeładowania strony. 
+// JSON - podobny do obiektu, reprezentuje dane i tylko dane, musi być w " " (pojedyńczy nie zadziała), ostatnia właściwość bez przecinka, rozszerzenie .json.
+
+// const user = {
+//   name: 'Angela', 
+//   age: '23', 
+//   car: 'Nissan',
+// }
+
+
+// {
+//   "name": "Angela", //Format JSON
+//   "age": 23,
+//   "car": "Nissan"
+// }
+
+// Synchroniczność i asynchroniczność
+// JS jest językiem synchronicznym, bo kod się wykonuje po kolei
+
+// btn.addEventListener('click', () => {
+//   console.log('wykonuje się pierwszy!')
+//   const p = document.createElement('p')
+//   alert('stworzyłem paragraf!') //alert blokuje wykonywanie reszty kodu
+//   p.textContent = 'test'
+//   document.body.append(p)
+//   console.log('koniec')
+// })
+
+// Kod asynchroniczny nie blokuje wykonywania się innych funkcji
+
+// console.log(1);
+// setTimeout(() => {
+//   console.log(2);
+// }, 800);
+// console.log(3);
+
+// 1,3,2
+
+// Promisy - obietnice, jeśli spełnimy obietnicę to coś się stanie a jak nie to też coś się stanie
+
+// callback hell - np wielopoziomowe odwoływanie się w funkcji do innej funkcji - kod bardzo trudno się czyta np.
+
+// setTimeout(() => {
+//   console.log(1);
+//     setTimeout(() => {
+//       console.log(2);
+//         setTimeout(() => {
+//           console.log(3);
+//             setTimeout(() => {
+//               console.log(4);
+//                 setTimeout(() => {
+//                   console.log(5);
+//                 },300)
+//             },300)
+//          },300)
+//      },300)
+// },300)
+
+// z pomocą przychodza promisy, z pomocą których można uniknąć callbackhella lub nie jesteśmy pewnie wyniku funkcji
+
+// const newPromise = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve()
+//     }, 300)
+//   })
+// }
+
+// newPromise()
+//       .then(() => {
+//         console.log('1')
+//         return newPromise()
+// })
+
+// newPromise()
+//       .then(() => {
+//         console.log('2')
+//         return newPromise()
+// })
+
+// newPromise()
+//       .then(() => {
+//         console.log('3')
+//         return newPromise()
+// })
+
+// newPromise()
+//       .then(() => {
+//         console.log('4')
+//         return newPromise()
+// })
+
+// newPromise()
+//       .then(() => {
+//         console.log('5')
+//         return newPromise()
+// })
+
+// .then(() => console.log('5'))
+// .catch(err => console.error(err));
+
+// const test = new Promise((resolve, reject) => {
+//   if(true){
+//     resolve('jest ok')
+//   } else {
+//     reject('błąd')
+//   }
+// })
+
+// test
+//   .then(info => console.log(info))
+//   .catch(err => console.error(err))
+
+// get - pobiera dane, post - wysyła dane, put, patch - edycja danych, delete - usuwa dane
+
+// const URL = 'mmcschool.pl' //jako API
+
+// const test = {
+//   method: 'POST'
+// }
+
+// // fetch(URL, {
+// //   method: 'GET' // robimy obiekt
+// // })
+
+// fetch(URL, test)
+
+// Async Await - uproszczone promisy/ możemy zapisać kod synchroniczny jako asynchroniczny
+
+// const checkAge = age => {
+//   return new Promise((resolve, reject) => {
+//     if(age >= 18) {
+//       resolve()
+//     }else {
+//       reject('Masz za mało lat')
+//     }
+//   })
+// }
+
+// const doubleCheck = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log('Sprawdzam jeszcze raz...')
+//     setTimeout(() => {
+//       resolve('Faktycznie, wiek sie nie zgadza.')
+//     }, 1000)
+//   })
+// }
+
+// checkAge(50)
+//   .then(() => {
+//   console.log('Chyba możesz wejść...')
+//   return doubleCheck() //odwołujemy się do doubleCheck
+// })
+//   .then(res => console.log(res)) //odpowiada resolvowi w doublecheck
+//   .then(() => {
+//   console.log('Weryfikacja zakończona')
+// })
+//   .catch(err => console.error(err))
+
+//to samo co u góry zapisane z Async i Await
+
+// async function test() {
+// try{await checkAge(22)
+//   console.log('Chyba możesz wejść.')
+//   await doubleCheck()
+//   console.log('Faktycznie, wiek się nie zgadza')
+//   console.log('Weryfikacja zakończona')}
+// } catch{
+// console.error('Bląd, masz za mało lat.')
+// }
+
+// test();
+
+// Async Await 2
+
+// const URL = 'https://dog.ceo/api/breeds/image/random'
+
+// fetch(URL)
+//   .then(res => res.json)//przerabiamy plik na jsona - standardowa procedura 
+//   .then(data => console.log(data))
+//   .catch(error => console.error(error))
+
+// async function test(){
+//  try{
+//   const res = await fetch(URL)
+//   const data = await res.json()
+//   console.log(data)
+//  } catch {
+//    console.error('błąd')
+//  }
+// }
+
+// test()
+
+// Axios 3 wersja jak można pobierać dane z API
+
+// fetch(URL)
+//   .then(res => res.json) //przerabiamy plik na jsona - standardowa procedura 
+//   .then(data => one.setAttribute('src', res.message))
+//   .catch(error => console.error(error))
+
+// axiosa trzeba zainstalować z npm lub cdn
+
+// axios.get(URL).then(res => 
+//   two.setAttribute('src', res.data.message)
+// )
+
+// async function showImage(){
+//   const response = await axios.get(URL)
+//   three.setAttribute('src', resonse.data.message)
+// }
+
+// showImage();
