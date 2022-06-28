@@ -169,7 +169,7 @@
 // btn.outerHTML = '123' //usuwa przycisk i wstawia tekst
 
 // btn.innerHTML = ''; //pracujemy tylko z tekstem
-// btn.innerHTML = '<li>123</li>'; //możemy nawet dodać tagi html, nie powinniśmy stosować gdy użytkownik może modyfikować tekst na stronie, ponieważ innetHTML zaczytuje również style
+// btn.innerHTML = '<li>123</li>'; //możemy nawet dodać tagi html, nie powinniśmy stosować gdy użytkownik może modyfikować tekst na stronie, ponieważ innerHTML zaczytuje również style
 
 // console.log(btn.innerText); //działają tak samo - dodają tekst na stronę 
 // console.log(btn.textContent); //textContent ignoruje style dodane w html
@@ -188,6 +188,8 @@
 
 // p.remove();
 // div.remove();
+
+// addEventListener
 
 // target.addEventListener(type, listener) - ogólny wzór
 
@@ -548,7 +550,7 @@
 // const imgElement = document.createElement('img');
 // document.body.append(imgElement);
 // imgElement.setAttribute('src', 'https://cdn.pixabay.com/photo/2022/03/08/07/08/water-7055153_960_720.jpg');
-// img.Element.setAttribute('alt','obrazek');
+// imgElement.setAttribute('alt','obrazek');
 
 // const myFunc = () => {
 //   console.log('cokolwiek');
@@ -761,7 +763,7 @@
 //   showNumber() {
 //     console.log(this.number); //cl pokaże 123
 //   },
-//   // showNumber2:() => {
+//   // showNumber2() => {
 //   //   console.log(this); //wskazuje obiekt window
   
 //   showNumber2() {
@@ -905,10 +907,10 @@
 // console.log(userInfo); //jeden kluczy name został nadpisany
 // console.log(user); //został zniszczony
 
-// const userInfo2 = Object.assign({}, user, pet); //wstawiamy {} przed naszymi obektami, zęby ich nie zniszczyć 
+// const userInfo2 = Object.assign({}, user, pet); //wstawiamy {} przed naszymi obektami, żeby ich nie zniszczyć 
 
 // const userCopy = Object.assign({}, user)
-// userCopy.age =25;
+// userCopy.age = 25;
 // console.log(userCopy);
 
 // Destrukturyzacja obiektów
@@ -989,8 +991,8 @@
 // fetch().then().catch() - standardowy zapis fetcha. fetch słuzy do poboru danych, then mówi co zrobimy sobie z tymi danymi, catch wyłapuje błędy 
 
 // fetch(URL)
-//   .then(res => console.log(res)) //response
-//   .then(data => console.log(data.message)) //przechodzimy do data i dostajemy link do zdj
+//   .then(res => res.json()) //response
+//   .then(data => console.log(data)) //przechodzimy do data i dostajemy link do zdj
 //   .catch(err => console.error(err)) //wyrzuca błąd
 
 // btn.addEventListener('click', ()=> {
@@ -1064,7 +1066,7 @@
 //      },300)
 // },300)
 
-// z pomocą przychodza promisy, z pomocą których można uniknąć callbackhella lub nie jesteśmy pewnie wyniku funkcji
+// z pomocą przychodza promisy, z pomocą których można uniknąć callbackhella lub nie jesteśmy pewni wyniku funkcji
 
 // const newPromise = () => {
 //   return new Promise((resolve, reject) => {
@@ -1104,7 +1106,7 @@
 //         return newPromise()
 // })
 
-// .then(() => console.log('5'))
+// .then(() => console.log('6'))
 // .catch(err => console.error(err));
 
 // const test = new Promise((resolve, reject) => {
